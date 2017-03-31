@@ -7,7 +7,7 @@ import random
 
 littlealpha = "abcdefghijklmnopqrstuvwxyz"
 bigalpha = littlealpha.upper()
-otherchar = "!$@#%*&^\/"
+otherchar = "!$@#%*&^"
 charlist = [bigalpha, littlealpha, otherchar]
 fieldlist = ["Mathematics", "Physics", "Data Science",
              "Chemistry", "Computer Science", "Analysis", "Complex Analysis",
@@ -148,8 +148,8 @@ def main():
     f = open("user.csv", "wt")
     try:  
         writer = csv.writer(f)
-        writer.writerow( ["Username", "Password", "Registration_Date", "Num_of_Art_Edited",
-        "First_Name", "Last_Name", "Salt"] )
+        #writer.writerow( ["Username", "Password", "Registration_Date", "Num_of_Art_Edited",
+        #"First_Name", "Last_Name", "Salt"] )
         for i in range(1000):
             username = makeusername() 
             if not (username in usernamelist): # check if username already exists
@@ -161,12 +161,12 @@ def main():
     finally:
         f.close()
 
-
+    
     
     f = open("field.csv", "wt")
     try:  
         writer = csv.writer(f)
-        writer.writerow( ["Field", "Subfield_Of"] )
+        #writer.writerow( ["Field", "Subfield_Of"] )
         for i in fieldlist:
             writer.writerow( [i, subfieldof(i)] )
           
@@ -179,7 +179,7 @@ def main():
         adminlist = []
         adminfieldlist = []
         writer = csv.writer(f)
-        writer.writerow( ["AdminID", "Genre", "SuperAdmin"] )
+        #writer.writerow( ["AdminID", "Genre", "SuperAdmin"] )
         for i in range(0, len(usernamelist), 20 ):
             admintypelist = admintype()
             is_super = admintypelist[0]
@@ -194,7 +194,7 @@ def main():
     f = open("has_experience.csv", "wt")
     try:        
         writer = csv.writer(f)
-        writer.writerow( ["Username", "Field", "Level"] )
+        #writer.writerow( ["Username", "Field", "Level"] )
         for i in range(0, len(usernamelist), 6 ):
             if usernamelist[i] in adminlist:
                 continue
@@ -214,8 +214,8 @@ def main():
     f = open("article.csv", "wt")
     try:        
         writer = csv.writer(f)
-        writer.writerow( ["Article_ID", "Article_Title", "Last_Edited",
-                          "Editing_Level", "Creator", "Belongs_To"] )
+        #writer.writerow( ["Article_ID", "Article_Title", "Last_Edited",
+                          #"Editing_Level", "Creator", "Belongs_To"] )
         art_id = 1
         for i in range(0,1500):
             art_idstr = "0"*(12-len(str(art_id)))+ str(art_id)
@@ -228,7 +228,7 @@ def main():
     finally:
         f.close()
 
-
+    
 main()
 
   
