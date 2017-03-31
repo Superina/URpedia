@@ -7,7 +7,7 @@ drop table if exists Admin;
 create table Article(
 	id CHAR(12),
 	title VARCHAR(30) NOT NULL,
-	last_edited DATETIME NOT NULL,
+	last_edited VARCHAR(30) NOT NULL,
 	editing_level INT DEFAULT NULL,
 	creator VARCHAR(30) REFERENCES User(username) ON DELETE CASCADE,
 	belongs_to VARCHAR(30) REFERENCES Field(field) ON DELETE CASCADE,
