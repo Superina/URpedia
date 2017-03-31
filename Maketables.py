@@ -141,8 +141,14 @@ def makelast_edited():
     month = random.randint(1, 12)
     dayrange = daymonth[month -1]
     day = random.randint(1, dayrange)
+    daystr = str(day)
+    if len(daystr) == 1:
+        daystr = "0" + daystr
     year = random.randint(2010, 2017)
-    return str(month) + "/" + str(day) + "/" + str(year)
+    monthstr = str(month)
+    if len(monthstr) == 1:
+        monthstr = "0" + monthstr
+    return  str(year) + "/" + daystr + "/" + monthstr 
 
 def makefield():
     whichfield = random.randint(0, len(fieldlist) -1)
@@ -167,9 +173,9 @@ def main():
                                   makeregistration_date(), makenum_of_art_edited(),
                                   makefirst_name(), makelast_name(), makesalt()] )
         usernamelist.append("DELETED")
-        writer.writerow( ["DELETED", makepassword(),
-                                  makeregistration_date(), makenum_of_art_edited(),
-                                  makefirst_name(), makelast_name(), makesalt()] )
+        writer.writerow( ["DELETED", "DELETED",
+                                  "0000/00/00", "0",
+                                  "DELETED", "DELEDTED", "00:00:00"] )
                 
           
     finally:
@@ -237,7 +243,8 @@ def main():
                               makelevel(),
                               usernamelist[random.randint(0, len(usernamelist)-1)],
                               makefield()] )
-            art_id = art_id + 1       
+            art_id = art_id + 1
+            #print(art_idstr)
           
     finally:
         f.close()
