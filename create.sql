@@ -5,7 +5,7 @@ drop table if exists User;
 drop table if exists Admin;
 
 create table Article(
-	id CHAR(12),
+	id INT,
 	title VARCHAR(30) NOT NULL,
 	last_edited DATE NOT NULL,
 	editing_level INT DEFAULT NULL,
