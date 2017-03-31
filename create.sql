@@ -30,7 +30,8 @@ create table Has_Experience(
 create table User(
 	username VARCHAR(30) PRIMARY KEY,
 	password VARCHAR(30) NOT NULL,
-	registration_date DATETIME NOT NULL,
+	registration_date VARCHAR(30) NOT NULL,
+	num_art_edited INT,
 	first_name VARCHAR(30) NOT NULL,
 	last_name VARCHAR(30) NOT NULL,
 	salt VARCHAR(30) NOT NULL
@@ -59,3 +60,4 @@ CREATE TRIGGER field_delete_2 BEFORE DELETE ON Field
 		UPDATE Has_Experience
 		SET field = "UNSPECIFIED"
 		WHERE Has_Experience.field = OLD.field;
+
