@@ -12,7 +12,7 @@ charlist = [bigalpha, littlealpha, otherchar]
 fieldlist = ["Mathematics", "Physics", "Data Science",
              "Chemistry", "Computer Science", "Analysis", "Complex Analysis",
              "Real Analysis", "Algebra", "Theoretical Physics",
-             "Database Systems"]
+             "Database Systems", "Unspecified"]
 def subfieldof(arg):
     if arg == "Real Analysis":
         return "Analysis"
@@ -26,6 +26,8 @@ def subfieldof(arg):
         return "Physics"
     if arg == "Database Systems":
         return "Computer Science"
+    else:
+        return ""
 
   
 # this is for creating random password
@@ -71,8 +73,15 @@ def makeregistration_date():
     month = random.randint(1, 12)
     dayrange = daymonth[month -1]
     day = random.randint(1, dayrange)
+    daystr = str(day)
+    if len(daystr) == 1:
+        daystr = "0" + daystr
     year = random.randint(1950, 1999)
-    return str(month) + "/" + str(day) + "/" + str(year)
+    monthstr = str(month)
+    if len(monthstr) == 1:
+        monthstr = "0" + monthstr
+    return  str(year) + "/" + daystr + "/" + monthstr 
+    
 
 def makenum_of_art_edited():
     valuelist = [0, min([random.randint(0,200), random.randint(0,200)]),
@@ -107,14 +116,14 @@ def makelevel():
 
 def admintype():
     typelist = []
-    superstatus = ["True", "False"]
+    superstatus = ["1", "0"]
     issuper = random.randint(0,3)
     if issuper > 0:
         typelist.append(superstatus[0])
     else:
         typelist.append(superstatus[1])
     hasfield = random.randint(0,2)
-    if hasfield == 0 and typelist[0] == "True":
+    if hasfield == 0 and typelist[0] == "1":
         typelist.append("")
     else:
         typelist.append(fieldlist[random.randint(0, len(fieldlist)-1) ] )
@@ -157,6 +166,11 @@ def main():
                 writer.writerow( [username, makepassword(),
                                   makeregistration_date(), makenum_of_art_edited(),
                                   makefirst_name(), makelast_name(), makesalt()] )
+        usernamelist.append("DELETED")
+        writer.writerow( ["DELETED", makepassword(),
+                                  makeregistration_date(), makenum_of_art_edited(),
+                                  makefirst_name(), makelast_name(), makesalt()] )
+                
           
     finally:
         f.close()
