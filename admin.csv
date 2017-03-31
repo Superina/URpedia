@@ -1,51 +1,100 @@
-AdminID,Genre,SuperAdmin
-m$#jfX@JDty#!Z\%*/T,,True
-@E!BMPv%d%Tw%uuKEEHh$j@Ha$F,Physics,False
-O^Se^vX/!FiojtHwE\DXr/NNf,,True
-As%F/#AV#P@$Q%*IV/mOV&NamSbeNZ,,True
-iJoQ*E^xzY#!kO*@&o*M%o,Chemistry,True
-cd$\$Z$!/QAn^d,,True
-AA$bhRv***M\^F,Mathematics,True
-%*\DmZ$bUo^IM%FWAb$&Ux/,Physics,True
-d%s@&hJf&\*!H/MlYH@p$qnS^CUHPL,Algebra,True
-&A&@Xkr&@vD!ZfH^e#/ul,,True
-D/%A,Algebra,False
-*pTo/RC%Kshch$,Mathematics,False
-be^/\&HlAq^MK^\/$wK^,Analysis,True
-ZMS#rb\S!Y*Llv,Physics,True
-R%P&I$#NkV*^zQcc@X*m,,True
-Gousy$Gh,Physics,False
-N\&Y\CL%,Data Science,False
-&!fsvbHFs%R,Analysis,True
-xT\Emxy,Algebra,False
-#!bE*Zf/TTh,,True
-W&@!\oQ,Computer Science,False
-SDZJx!nG!Gc#*Ky#LNC*F!av/oiPS,Data Science,False
-\P&C^@ldb,Chemistry,True
-X#%gIg&m^%hxR$IG%,Chemistry,True
-YwwA&DLw,Database Systems,True
-MjBFV\lkY,Computer Science,False
-iJ*yn^,,True
-$TKi#C*\evlNl*/@,Complex Analysis,True
-Vm\F*RyH!&y\jzGW&BYEul&O\##/,Analysis,True
-faYCt!\UOtuQ#A&J/N&b#En@z,Chemistry,False
-vV&*&^ZUtqC!BjOw,Theoretical Physics,True
-v/r\&yC%GE$Jb\y%ve,Physics,True
-GVrP&S#&w,Chemistry,False
-v\/vA!$BtiPr*/@x,Algebra,True
-CaW*%%GyJ^gq\tvHthRJ%\rmi,Real Analysis,True
-fk&Dv,Real Analysis,True
-%WjEwq@\KG,Data Science,False
-$fZ&tZZtle*,Real Analysis,True
-AEwyFQa\$H@u&Mn%X@F!O!,Data Science,True
-kgG@%F,,True
-EMV!a/b&/oZX,Theoretical Physics,False
-*H^D,Mathematics,True
-IU#ZpD&UNL#ZRc%er*PT\!/iwYn$,Analysis,True
-K/UXwxPNYQ\/vbU$@@T$,Real Analysis,True
-&B^RbfTVwqr*Dl*dxd$%bJ,Complex Analysis,False
-F&y*KV%Sw#^a,Computer Science,True
-ZYzN$gYYrn*@eNR@RVL^Dm^,Database Systems,True
-CS^zzSh&&#slp#%A$G%*Z%NM,Theoretical Physics,True
-%r*M%gRKnE,Real Analysis,False
-vsSt*@,,True
+m$#jfX@JDty#!Z\%*/T,,True
+
+@E!BMPv%d%Tw%uuKEEHh$j@Ha$F,Physics,False
+
+O^Se^vX/!FiojtHwE\DXr/NNf,,True
+
+As%F/#AV#P@$Q%*IV/mOV&NamSbeNZ,,True
+
+iJoQ*E^xzY#!kO*@&o*M%o,Chemistry,True
+
+cd$\$Z$!/QAn^d,,True
+
+AA$bhRv***M\^F,Mathematics,True
+
+%*\DmZ$bUo^IM%FWAb$&Ux/,Physics,True
+
+d%s@&hJf&\*!H/MlYH@p$qnS^CUHPL,Algebra,True
+
+&A&@Xkr&@vD!ZfH^e#/ul,,True
+
+D/%A,Algebra,False
+
+*pTo/RC%Kshch$,Mathematics,False
+
+be^/\&HlAq^MK^\/$wK^,Analysis,True
+
+ZMS#rb\S!Y*Llv,Physics,True
+
+R%P&I$#NkV*^zQcc@X*m,,True
+
+Gousy$Gh,Physics,False
+
+N\&Y\CL%,Data Science,False
+
+&!fsvbHFs%R,Analysis,True
+
+xT\Emxy,Algebra,False
+
+#!bE*Zf/TTh,,True
+
+W&@!\oQ,Computer Science,False
+
+SDZJx!nG!Gc#*Ky#LNC*F!av/oiPS,Data Science,False
+
+\P&C^@ldb,Chemistry,True
+
+X#%gIg&m^%hxR$IG%,Chemistry,True
+
+YwwA&DLw,Database Systems,True
+
+MjBFV\lkY,Computer Science,False
+
+iJ*yn^,,True
+
+$TKi#C*\evlNl*/@,Complex Analysis,True
+
+Vm\F*RyH!&y\jzGW&BYEul&O\##/,Analysis,True
+
+faYCt!\UOtuQ#A&J/N&b#En@z,Chemistry,False
+
+vV&*&^ZUtqC!BjOw,Theoretical Physics,True
+
+v/r\&yC%GE$Jb\y%ve,Physics,True
+
+GVrP&S#&w,Chemistry,False
+
+v\/vA!$BtiPr*/@x,Algebra,True
+
+CaW*%%GyJ^gq\tvHthRJ%\rmi,Real Analysis,True
+
+fk&Dv,Real Analysis,True
+
+%WjEwq@\KG,Data Science,False
+
+$fZ&tZZtle*,Real Analysis,True
+
+AEwyFQa\$H@u&Mn%X@F!O!,Data Science,True
+
+kgG@%F,,True
+
+EMV!a/b&/oZX,Theoretical Physics,False
+
+*H^D,Mathematics,True
+
+IU#ZpD&UNL#ZRc%er*PT\!/iwYn$,Analysis,True
+
+K/UXwxPNYQ\/vbU$@@T$,Real Analysis,True
+
+&B^RbfTVwqr*Dl*dxd$%bJ,Complex Analysis,False
+
+F&y*KV%Sw#^a,Computer Science,True
+
+ZYzN$gYYrn*@eNR@RVL^Dm^,Database Systems,True
+
+CS^zzSh&&#slp#%A$G%*Z%NM,Theoretical Physics,True
+
+%r*M%gRKnE,Real Analysis,False
+
+vsSt*@,,True
+
