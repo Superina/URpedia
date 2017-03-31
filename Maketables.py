@@ -80,7 +80,7 @@ def makeregistration_date():
     monthstr = str(month)
     if len(monthstr) == 1:
         monthstr = "0" + monthstr
-    return  str(year) + "/" + daystr + "/" + monthstr 
+    return  str(year) + "-" + daystr + "-" + monthstr 
     
 
 def makenum_of_art_edited():
@@ -148,7 +148,7 @@ def makelast_edited():
     monthstr = str(month)
     if len(monthstr) == 1:
         monthstr = "0" + monthstr
-    return  str(year) + "/" + daystr + "/" + monthstr 
+    return  str(year) + "-" + daystr + "-" + monthstr 
 
 def makefield():
     whichfield = random.randint(0, len(fieldlist) -1)
@@ -174,7 +174,7 @@ def main():
                                   makefirst_name(), makelast_name(), makesalt()] )
         usernamelist.append("DELETED")
         writer.writerow( ["DELETED", "DELETED",
-                                  "0000/00/00", "0",
+                                  "0000-00-00", "0",
                                   "DELETED", "DELEDTED", "00:00:00"] )
                 
           
