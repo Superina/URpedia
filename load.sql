@@ -3,10 +3,9 @@ LOAD DATA LOCAL INFILE "article.txt" INTO TABLE Article
   LINES TERMINATED BY "\n";
 
 LOAD DATA LOCAL INFILE "field.txt" INTO TABLE Field
-  FIELDS TERMINATED BY "," ENCLOSED BY '"'
-  LINES TERMINATED BY "\n"
-  (field, @subfield_of)
-  SET subfield_of = nullif(@subfield_of,'NULL');
+  FIELDS TERMINATED BY "," 
+  ENCLOSED BY '"'
+  LINES TERMINATED BY "\n";
 
 LOAD DATA LOCAL INFILE "has_experience.txt" INTO TABLE Has_Experience
   FIELDS TERMINATED BY "," ENCLOSED BY '"'
