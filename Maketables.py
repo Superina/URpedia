@@ -160,7 +160,7 @@ def main():
     usernamelist = []
     regdatelist = []
     
-    f = open("user.csv", "wt")
+    f = open("user.txt", "wt")
     try:  
         writer = csv.writer(f)
         #writer.writerow( ["Username", "Password", "Registration_Date", "Num_of_Art_Edited",
@@ -183,7 +183,7 @@ def main():
 
     
     
-    f = open("field.csv", "wt")
+    f = open("field.txt", "wt")
     try:  
         writer = csv.writer(f)
         #writer.writerow( ["Field", "Subfield_Of"] )
@@ -194,7 +194,7 @@ def main():
         f.close()
     
 
-    f = open("admin.csv", "wt")
+    f = open("admin.txt", "wt")
     try:
         adminlist = []
         adminfieldlist = []
@@ -211,7 +211,7 @@ def main():
     finally:
         f.close()
 
-    f = open("has_experience.csv", "wt")
+    f = open("has_experience.txt", "wt")
     try:        
         writer = csv.writer(f)
         #writer.writerow( ["Username", "Field", "Level"] )
@@ -231,7 +231,7 @@ def main():
     finally:
         f.close()
 
-    f = open("article.csv", "wt")
+    f = open("article.txt", "wt")
     try:        
         writer = csv.writer(f)
         #writer.writerow( ["Article_ID", "Article_Title", "Last_Edited",
