@@ -124,7 +124,7 @@ def admintype():
         typelist.append(superstatus[1])
     hasfield = random.randint(0,2)
     if hasfield == 0 and typelist[0] == "1":
-        typelist.append("")
+        typelist.append("\\N")
     else:
         typelist.append(fieldlist[random.randint(0, len(fieldlist)-1) ] )
     return typelist
@@ -220,7 +220,7 @@ def main():
                 continue
             else:              
                 writer.writerow( [usernamelist[i],
-                                  fieldlist[random.randint(0, len(fieldlist)-1)]
+                                  makefield()
                                   , str(random.randint(1, 4)) ] )
         for i in range(0, len(adminlist)):
             if len(adminfieldlist[i]) > 1:
