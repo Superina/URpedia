@@ -6,7 +6,7 @@ LOAD DATA LOCAL INFILE "field.txt" INTO TABLE Field
   FIELDS TERMINATED BY "," ENCLOSED BY '"'
   LINES TERMINATED BY "\n"
   (field, @subfield_of)
-  SET subfield_of = nullif(@subfield_of,'\\N');
+  SET subfield_of = nullif(@subfield_of,'NULL');
 
 LOAD DATA LOCAL INFILE "has_experience.txt" INTO TABLE Has_Experience
   FIELDS TERMINATED BY "," ENCLOSED BY '"'
