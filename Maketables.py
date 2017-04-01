@@ -27,7 +27,7 @@ def subfieldof(arg):
     if arg == "Database Systems":
         return "Computer Science"
     else:
-        return ""
+        return "\\N"
 
   
 # this is for creating random password
