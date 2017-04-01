@@ -27,7 +27,7 @@ def subfieldof(arg):
     if arg == "Database Systems":
         return "Computer Science"
     else:
-        return "NULL"
+        return ""
 
   
 # this is for creating random password
@@ -183,12 +183,12 @@ def main():
 
     
     
-    f = open("field.txt", "wt")
+    f = open('field.txt', 'wt')
     try:  
         writer = csv.writer(f)
         #writer.writerow( ["Field", "Subfield_Of"] )
         for i in fieldlist:
-            writer.writerow( [i, subfieldof(i)] )
+            f.write( i + "," + subfieldof(i) + "\n" )
           
     finally:
         f.close()
@@ -240,10 +240,10 @@ def main():
         for i in range(0,1500):
             #art_idstr = "0"*(12-len(str(art_id)))+ str(art_id)
             art_idstr = str(art_id)
-            writer.writerow( [art_idstr, makearticle_title(), makelast_edited(),
-                              makelevel(),
-                              usernamelist[random.randint(0, len(usernamelist)-1)],
-                              makefield()] )
+            f.write(  art_idstr + "," +  makearticle_title() + "," + makelast_edited() + "," +
+                              makelevel() + "," +
+                              usernamelist[random.randint(0, len(usernamelist)-1)] + "," +
+                              makefield() + "\n" )
             art_id = art_id + 1
             #print(art_idstr)
           
