@@ -238,7 +238,8 @@ def main():
                           #"Editing_Level", "Creator", "Belongs_To"] )
         art_id = 1
         for i in range(0,1500):
-            art_idstr = "0"*(12-len(str(art_id)))+ str(art_id)
+            #art_idstr = "0"*(12-len(str(art_id)))+ str(art_id)
+            art_idstr = str(art_id)
             writer.writerow( [art_idstr, makearticle_title(), makelast_edited(),
                               makelevel(),
                               usernamelist[random.randint(0, len(usernamelist)-1)],
