@@ -80,7 +80,7 @@ def makeregistration_date():
     monthstr = str(month)
     if len(monthstr) == 1:
         monthstr = "0" + monthstr
-    return  str(year) + "-" + daystr + "-" + monthstr 
+    return  str(year) + "-" + monthstr + "-" + daystr 
     
 
 def makenum_of_art_edited():
@@ -148,7 +148,7 @@ def makelast_edited():
     monthstr = str(month)
     if len(monthstr) == 1:
         monthstr = "0" + monthstr
-    return  str(year) + "-" + daystr + "-" + monthstr 
+    return  str(year) + "-" + monthstr + "-" + daystr 
 
 def makefield():
     whichfield = random.randint(0, len(fieldlist) -1)
