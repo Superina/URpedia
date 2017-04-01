@@ -5,8 +5,8 @@ LOAD DATA LOCAL INFILE "article.txt" INTO TABLE Article
 LOAD DATA LOCAL INFILE "field.txt" INTO TABLE Field
   FIELDS TERMINATED BY "," ENCLOSED BY '"'
   LINES TERMINATED BY "\n"
-  #(field, @subfield_of)
-  #SET subfield_of = nullif(@subfield_of,'');
+  (field, @subfield_of)
+  SET subfield_of = nullif(@subfield_of,'\\N');
 
 LOAD DATA LOCAL INFILE "has_experience.txt" INTO TABLE Has_Experience
   FIELDS TERMINATED BY "," ENCLOSED BY '"'
