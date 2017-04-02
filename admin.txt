@@ -1,51 +1,51 @@
-B&@D^#h,Data Science,0
-AbdKn,Chemistry,0
-&sTQi#LDksu@B$&ypZ,Database Systems,1
-b@WC,Mathematics,1
-qoL!U^FP@GQMpqT&pQcCk$cOPy,Analysis,1
-Wp#$S%@uSv$,Database Systems,1
-!S%%PT$BcbVLju%vA&*zi!Moy%m,Physics,1
-^^G^TUdCLi$ZGfY$,\N,1
-zYV^@IO&k&%^ULQQ&vwS,Algebra,0
-pG!hZ,Chemistry,0
-^@%d#AUsqh!MzKntIToM#XiFAa*ZB$,Complex Analysis,1
-vk#V@bO^!#haQ^,Physics,1
-xnTzr!$PrAo@^Km^&,Real Analysis,0
-d*!B@JZPd*t!#k,Unspecified,1
-y&cd&wP%!Pf#fDlJug@@*Che#XHpC,\N,1
-HT^@lDdp*Gq*!HJ,Algebra,1
-j@j&sx&,Unspecified,0
-^H*cWBeh^,Data Science,1
-vjp!^ORznsXT,Physics,1
-l^Jpt@pBhgM,Data Science,1
-P%C%$aW^m,\N,1
-goaDX$UAe@FDnR!y$Ea%s,Complex Analysis,0
-N&XeG&cPNJ*,Database Systems,1
-!@S$f*rPrf*!f##zLNp^#xyR&w$,Computer Science,0
-rAYmaPBo^$B$VR@@@,Algebra,0
-B%YuxI#PP^VFg*Bx%qaKW##b#X*$Y,Mathematics,1
-R#$gT&L#nW*,Mathematics,0
-yHsbi&@dTJ#rBw^$HudE$i%&Z##&,Computer Science,1
-X*Q$#tU$K*uSrOp,Mathematics,1
-el^dL^%&,\N,1
-X^!X#L&$*zgVg&,Chemistry,0
-#q%Vo#U!pJ@$&j!$ZRG@B*,Mathematics,0
-WJ^ywy@s$!@@HaM%^mW$,Physics,0
-iSYs,Algebra,1
-HXsqM@R&Dp!y%TiH#sQ!#zj,\N,1
-&P$sdA$oH&J#P!Th$F%%*uFBb,\N,1
-f%Sf@JIXM^U$Hl$*K^VLl@aF,\N,1
-G#URAG^,Algebra,1
-D*%L%HYs$#NS$,Data Science,1
-lqLaQDwre!b@OG*m%lLzM,Analysis,0
-c%^!J$n%e*Kj&nnCoO*n,\N,1
-!@W!QuWV%HHHc,Data Science,1
-&B@&HR#Gl!jPj,Algebra,0
-yBsG%!Z**O!OG%I$aezZYf&*vK,\N,1
-g&yqr,Real Analysis,0
-#sac$N%g&Z^PPFO*c$^n&#^%,\N,1
-!Kuzj$,Data Science,0
-^R&Qf^T#cE,\N,1
-OhP$&IKJWdYCqdC*!dyMVrONbU@&v^,\N,1
-$kB&!gXFF^p%@N,Complex Analysis,1
-DELETED,Algebra,1
+As%ZefO@n,Chemistry,1
+cD$!t,\N,1
+q^NHN@vtg^FnfqQ@ji,Physics,1
+X#WQ!jKcc!*huO%,Mathematics,1
+@!M$#ecO#G&$,Analysis,0
+#IpGrN$TprJ^%PTC@UyB$l,Theoretical Physics,0
+%*QBSU$sYU#^JZA^f,Unspecified,1
+@FdA#xBlsM#gsp@xU%&$#,\N,1
+sKy%d#%jLSL$bSdgmn@XMg,Mathematics,0
+GM@*&B@@H&lOmGpzU$!v&T$fdb%%#M,Real Analysis,1
+AvnSAc$p!&$SG,Algebra,1
+guL%NA%,Mathematics,1
+KlW$Qlw%wDT&ep&*@jIW,Real Analysis,1
+$!$s&F*WL*cG^,Database Systems,0
+#%&Jk#lUI#!NaNnVY$,\N,1
+%!aFO,Mathematics,1
+!mqJ*S,Analysis,1
+#fSXPz*NUij,Database Systems,1
+#oK%,Complex Analysis,0
+yX^!P^dt!&mP&^rx$,Mathematics,0
+p*nb##oi#ow$d,Unspecified,0
+ipQ&uwc###k!ybSgAF$%L&%SA%w@%^,Analysis,0
+QTb%W@!zf@!!&,Data Science,1
+ckhv!di^DQD,Physics,1
+Pgb@e#dfu#Pe^j$&#Uio$^JFXzf,Theoretical Physics,1
+C@REOOI^yjOxAQHIg,Complex Analysis,0
+xCJsXORyR%NpQg&^%%tXerJ,Real Analysis,0
+yatDE%IU@V$g%&@Szk%,\N,1
+cPYNGivCvD$o&SLl$&XfW,\N,1
+Wy@%I@#@#%AKnvHn$nMLa,Computer Science,1
+v*@Z!&&WXIGY*&hAX%TFc*!#sK,Theoretical Physics,1
+olsHprB@RAl&#^,Mathematics,0
+EO**RZ&$pil,\N,1
+Dee&nLt%*^@^$^@@!&%tmktS&@,Physics,1
+OMf$#^^Q,Physics,0
+EDB&e*p%zwX!*EZVo!t,Chemistry,1
+z*vU@,Analysis,1
+Ve@y*%$JIF&mAKxxWIC,\N,1
+^zIrU^**pH!GdjzH!,Complex Analysis,1
+cP&VXNlQEZj#aw!ms,\N,1
+O$!jh#k,Analysis,0
+#WJ&d$otX%P*%F&l*$dd*lSd,Mathematics,0
+k*n^zd%g@EW*US#EFZ!HcwW,Complex Analysis,0
+^mwHbo*HSalge#@m!if#fotz&i$v,Theoretical Physics,1
+^y#SZ*Zq@Yc#@P^eYCA*iis!,Analysis,1
+nYj!,Analysis,1
+!UO%!%ztXHL,Theoretical Physics,1
+Prpe!@H,Real Analysis,1
+*$qnm*H*I$Gq$IyFWDJI%U*uC&O,Computer Science,1
+%Ia@JKYQ^VeFOXXzM&GX^@^Y,Computer Science,1
+DELETED,Physics,0

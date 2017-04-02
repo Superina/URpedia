@@ -27,7 +27,7 @@ def subfieldof(arg):
     if arg == "Database Systems":
         return "Computer Science"
     else:
-        return "\\N"
+        return ""
 
   
 # this is for creating random password
@@ -220,10 +220,10 @@ def main():
                 continue
             else:              
                 writer.writerow( [usernamelist[i],
-                                  makefield()
+                                  fieldlist[random.randint(0, len(fieldlist)-1)]
                                   , str(random.randint(1, 4)) ] )
         for i in range(0, len(adminlist)):
-            if len(adminfieldlist[i]) > 1:
+            if len(adminfieldlist[i]) > 4:
                 writer.writerow( [adminlist[i],
                                   adminfieldlist[i]
                                   , str(random.randint(1, 4)) ] )
