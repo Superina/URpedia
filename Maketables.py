@@ -27,7 +27,7 @@ def subfieldof(arg):
     if arg == "Database Systems":
         return "Computer Science"
     else:
-        return "\\N"
+        return ""
 
   
 # this is for creating random password
@@ -49,6 +49,33 @@ def makepass():
   
 """ User(Password:varchar(25) NOT NULL, Username: varchar(25), Registration_Date: date NOT NULL, Num_of_Art_Edited: int DEFAULT 0,
     First_Name:varchar(20) NOT NULL,  Last_Name:varchar(20) NOT NULL, Salt:varchar(20) NOT NULL)"""
+
+text_file = open("wordlist.txt", "r")
+words = text_file.readlines()
+#print(len(words))
+text_file.close()
+
+def makearticle():
+    endpunclist = [".", "!", "?", "", "", "", "", "", ""]
+    article = ""
+    randword = words[random.randint(0, len(words) - 1)][:-1]
+    randword = randword[0].upper() + randword[1: len(randword)]
+    article = randword  #first word
+    randword = words[random.randint(0, len(words) - 1)][:-1]
+    while (len(article) + len(randword))< 999:        
+        article +=  " " + randword + endpunclist[random.randint(0, len(endpunclist) - 1)]
+        #checking end punctuation
+        if article[-1] in ["?", ".", "!"]:
+            randword = words[random.randint(0, len(words) - 1)][:-1]
+            if len(randword) < 1:
+             continue
+            randword = randword[0].upper() + randword[1:]
+        else:
+            randword = words[random.randint(0, len(words) - 1)][:-1]
+    return article
+
+for i in range(50):
+    print(len(makearticle()))
 
 def makeusername():
     namelen = random.randint(4, 30)
@@ -243,7 +270,7 @@ def main():
             f.write(  art_idstr + "," +  makearticle_title() + "," + makelast_edited() + "," +
                               makelevel() + "," +
                               usernamelist[random.randint(0, len(usernamelist)-1)] + "," +
-                              makefield() + "\n" )
+                              makefield() + "," + makearticle() + "\n" )
             art_id = art_id + 1
             #print(art_idstr)
           
