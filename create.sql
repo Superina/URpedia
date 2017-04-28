@@ -11,6 +11,7 @@ create table Article(
 	editing_level INT DEFAULT NULL,
 	creator VARCHAR(30) REFERENCES User(username) ON DELETE CASCADE,
 	belongs_to VARCHAR(30) REFERENCES Field(field) ON DELETE CASCADE,
+	content VARCHAR(1001),
 	PRIMARY KEY (id)
 );
 
