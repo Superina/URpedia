@@ -44,6 +44,7 @@ $query = mysql_query("select * from Article");
         <td>editing_level</td>
         <td>creator</td>
         <td>belongs_to</td>
+	<td>content</td>
     </tr>
     <?php
   while ($row = mysql_fetch_array($query)){
@@ -55,6 +56,7 @@ $query = mysql_query("select * from Article");
            echo "<td>".$row['editing_level']."</td>";
            echo "<td>".$row['creator']."</td>";
            echo "<td>".$row['belongs_to']."</td>";
+	   echo "<td>".$row['content']."</td>";
            echo "<tr>";
   }
     ?>
