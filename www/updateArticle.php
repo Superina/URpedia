@@ -322,7 +322,6 @@ $db =  mysql_select_db("jfreeze",$server);
         echo '<h1 id="notEqual-header">';
         echo            'Invalid Editing Level!';
         echo       '</h1>';
-        echo "$minLvel $theLevel";
     }
 
 ?>
