@@ -196,13 +196,13 @@ def main():
             username = makeusername() 
             if not (username in usernamelist): # check if username already exists
                 usernamelist.append(username)
-                writer.writerow( [username, makepassword(),
-                                  makeregistration_date(), makenum_of_art_edited(),
-                                  makefirst_name(), makelast_name(), makesalt()] )
+                f.write( username + "," + makepassword() +","
+                            +  makeregistration_date() + "," + str(makenum_of_art_edited()) + ","
+                                  + makefirst_name() + "," + makelast_name() + "," + makesalt() + "\n" )
         usernamelist.append("DELETED")
-        writer.writerow( ["DELETED", "DELETED",
-                                  "0000-00-00", "0",
-                                  "DELETED", "DELEDTED", "00:00:00"] )
+        f.write( "DELETED" + "," + "DELETED" + "," +
+                                  "0000-00-00" + "," + "0" + "," +
+                                  "DELETED" + "," + "DELEDTED" + "," + "00:00:00" + "\n" )
                 
           
     finally:
