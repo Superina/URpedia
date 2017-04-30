@@ -225,13 +225,13 @@
 	</div>	
 
 	<div id="background_box2">
-		<h2>Create New Article</h2>
+		<h2>Update Article</h2>
 		<br>
 		<form action="submit_article.php" method="post">
-			Title: <br>
+			Article ID: <br>
 			<input type="number" name="numinput" id="numinput">			
 			<br>
-			<input type="submit" value="Submit Article">
+			<input type="submit" value="Submit">
 			<br>
 	</div>
 
