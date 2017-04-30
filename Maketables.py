@@ -132,11 +132,7 @@ def makelast_name():
     return namestr
 
 def makesalt():     #Time of registration
-    hour = random.randint(0,23)
-    minute = random.randrange(0,59)
-    second = random.randint(0,59)
-    timesalt = str(hour) + ":" + str(minute) + ":" + str(second)
-    return timesalt
+    return str( random.randint(100000, 999999) )
 
 def makelevel():
     return str(random.randint(1,4))
