@@ -59,7 +59,7 @@ words = ["alpha", "beta", "gamma", "delta", "epsilon",
 text_file.close()
 
 def makearticle():
-    endpunclist = [".", "!", "?", "", "", "", "", "", ""]
+    endpunclist = [".", "", "", "", "", "", "", "", ""]
     article = ""
     randword = words[random.randint(0, len(words) - 2)][:-1]
     randword = randword[0].upper() + randword[1: len(randword)]
