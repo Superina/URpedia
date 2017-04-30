@@ -21,7 +21,7 @@
     </head>
     <body>
 
-<h1>Article Created Successfully</h1>
+<h1>Article Updated Successfully</h1>
 
 <?php
 
