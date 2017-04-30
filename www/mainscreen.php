@@ -123,8 +123,8 @@
 	$num4=rand(1,1500);
 	$num5=rand(1,1500);
 
-	$server = mysql_connect("localhost","jshang5","iEXDfQqe");
-	$db =  mysql_select_db("jshang5",$server);
+	$server = mysql_connect("localhost","jfreeze","xBngNRS3");
+	$db =  mysql_select_db("jfreeze",$server);
 	$query1 = mysql_query("select title from Article where id=$num1");
 	$query2 = mysql_query("select title from Article where id=$num2");
 	$query3 = mysql_query("select title from Article where id=$num3");
@@ -186,8 +186,8 @@
 
 
 
-	$server = mysql_connect("localhost","jshang5","iEXDfQqe");
-	$db =  mysql_select_db("jshang5",$server);
+	$server = mysql_connect("localhost","jfreeze","xBngNRS3");
+	$db =  mysql_select_db("jfreeze",$server);
 	$query_field = mysql_query("select field from Field limit 5");
 
 
