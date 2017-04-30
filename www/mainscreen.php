@@ -272,6 +272,10 @@
   		<form id="admin" method="post" action="show_admin.php" >
   			<input type="submit" name="Admin" value="Show Admins">
   		</form>
+  		<br>
+  		<form id="CreateArticle" method="post" action="CreateArticle.php">
+			<input type="submit" name="CreateArticle" id="CreateArticle" value="Create Article">
+  		</form>
 
 	</div>
 

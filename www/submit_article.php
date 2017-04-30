@@ -28,12 +28,12 @@
 $server = mysql_connect("localhost","cperkin5","=8QYd#2T");
 $db =  mysql_select_db("cperkin5",$server);
 
-$maxID = mysql_query("SELECT MAX(id) FROM Article;");
+$maxID = mysql_query("SELECT MAX(id) FROM Article");
 $rowID = mysql_fetch_row($maxID);
 $id = $rowID[0]+1;
 
 $title = $_POST['title'];
-$creator = $_POST['creator'];
+$creator = $_COOKIE["username"];
 $editing_level = (int)$_POST['editing_level'];
 $category = $_POST['category'];
 $body = $_POST['body'];
@@ -42,7 +42,8 @@ $last_edited = date('Y-m-d');
 
 $server = mysql_connect("localhost","cperkin5","=8QYd#2T");
 $db =  mysql_select_db("cperkin5",$server);
-$query = mysql_query("INSERT INTO Article (id,title,last_edited,editing_level,creator,belongs_to) VALUES ('$id','$title','$last_edited','$editing_level','$creator','$category');");
+$query = mysql_query("INSERT INTO Article (id,title,last_edited,editing_level,creator,belongs_to,content) 
+    VALUES ('$id','$title','$last_edited','$editing_level','$creator','$category','$body')");
 mysql_query($query) or die("Error:".mysql_error());
 //$numberChange = mysqli_affected_rows($query);
 
