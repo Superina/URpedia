@@ -10,13 +10,13 @@
   }
             tr.alt
             {
-	      background-color: #777777;
+        background-color: #777777;
             }
         </style>
         <script type="text/javascript">
-	      $(document).ready(function(){
-		  $('.striped tr:even').addClass('alt');
-		});
+        $(document).ready(function(){
+      $('.striped tr:even').addClass('alt');
+    });
         </script>
         <title></title>
 
@@ -26,15 +26,15 @@
 
 
 
-<?php
+  <?php
 
+  
+  $server = mysql_connect("localhost","jshang5","iEXDfQqe");
+  $db =  mysql_select_db("jshang5",$server);
+  $query = mysql_query('select * from Article where belongs_to like "%Algebra%"');
+  
 
-
-$server = mysql_connect("localhost","jshang5","iEXDfQqe");
-$db =  mysql_select_db("jshang5",$server);
-$query = mysql_query("select * from Article");
-
-?>
+  ?>
 
 <table class="striped">
     <tr class="header">
@@ -45,12 +45,24 @@ $query = mysql_query("select * from Article");
         <td>creator</td>
         <td>belongs_to</td>
     </tr>
-    <?php
+    
+
+
+  <?php
+
   while ($row = mysql_fetch_array($query)){
        
            echo "<tr>";
            echo "<td>".$row['id']."</td>";
-           echo "<td>".$row['title']."</td>";
+           
+  ?>
+           
+           <td>
+           <form id="article" method="post" action="mainscreen2.php" >
+           <input type="submit" name="Article" value="<?php echo $row['title'] ?>">
+           </form>
+           </td>
+  <?php
            echo "<td>".$row['last_edited']."</td>";
            echo "<td>".$row['editing_level']."</td>";
            echo "<td>".$row['creator']."</td>";
@@ -61,3 +73,11 @@ $query = mysql_query("select * from Article");
 </table>
 </body>
 </html>
+
+
+
+
+
+
+
+
