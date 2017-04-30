@@ -48,10 +48,14 @@ function confirmPass(){
 		//echo $sp;
 		$frst = $_POST["firstfield"];
 		$lst = $_POST["lastfield"];
+    $fld1 = $_POST["educationfield"];
+    $genre = "Unspecified";
 
 		$server = mysql_connect("localhost","jfreeze","xBngNRS3");
 		$db =  mysql_select_db("jfreeze",$server);
 		$query = mysql_query("Insert into User Values('$usr','$sp','$date',0,'$frst','$lst','$salt')");
+    $query2 = mysql_query("Insert into Has_Experience Values('$usr','$genre','$fld1')");
+
       $cookie_name = "username";
       $cookie_value = $usr;
       setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");

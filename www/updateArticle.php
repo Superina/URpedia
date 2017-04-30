@@ -270,41 +270,60 @@ $db =  mysql_select_db("jfreeze",$server);
 	$db =  mysql_select_db("jfreeze",$server);
 	$queryupdate = mysql_query("select * from Article where id=$numid");
 
+	$levelQ = mysql_query("select editing_level from Article where id=$numid");
+	$rowID = mysql_fetch_row($levelQ);
+	$minLevel = $rowID[0];
 
-	$u1=mysql_fetch_array($queryupdate);
-	$fld = $u1['belongs_to'];
-	$cnt=$u1['content'];
-    
+	$userperson = $_COOKIE["username"];
+	$userL = mysql_query("select level from Has_Experience where username='$userperson'");
+	$rowID1 = mysql_fetch_row($userL);
+	$theLevel = $rowID1[0];
 
-		echo '<br>';
-		echo '<form action="update_article.php" method="post">';
-		echo	'Title: <br>';
-		echo	'<input type="text" name="title" value="'.$u1['title'].'">';
-		echo	'<br>';
-		echo	'Category:<br>';
-		echo	'<select name="category">';
-		echo      '<option value="'.$fld.'" selected="selected">'.$fld.'</option>';
-		echo	  '<option value="Real Analysis">Real Analysis</option>';
-		echo	  '<option value="Database Systems">Database Systems</option>';
-		echo	  '<option value="Complex Analysis">Complex Analysis</option>';
-		echo	  '<option value="Unspecified">Unspecified</option>';
-		echo	  '<option value="Chemistry">Chemistry</option>';
-		echo	  '<option value="Computer Science">Computer Science</option>';
-		echo	  '<option value="Data Science">Data Science</option>';
-		echo	  '<option value="Mathematics">Mathematics</option>';
-		echo	  '<option value="Analysis">Analysis</option>';
-		echo	  '<option value="Theoretical Physics">Theoretical Physics</option>';
-		echo	  '<option value="Algebra">Algebra</option>';
-		echo	  '<option value="Physics">Physics</option>';
-		echo	'</select>';
-		echo	'<br>';
-		echo	'Article Content:<br>';
-		echo	'<textarea rows="5" cols="70" name="body">';
-		echo    $cnt;
-		echo	'</textarea>';
-		echo	'<br>';
-		echo	'<input type="submit" id="submit" value="'.$numid.'">';
-		echo	'<br>';
+	if($theLevel>=$minLevel) {
+
+
+		$u1=mysql_fetch_array($queryupdate);
+		$fld = $u1['belongs_to'];
+		$cnt=$u1['content'];
+	    
+
+			echo '<br>';
+			echo '<form action="update_article.php" method="post">';
+			echo	'Title: <br>';
+			echo	'<input type="text" name="title" value="'.$u1['title'].'">';
+			echo	'<br>';
+			echo	'Category:<br>';
+			echo	'<select name="category">';
+			echo      '<option value="'.$fld.'" selected="selected">'.$fld.'</option>';
+			echo	  '<option value="Real Analysis">Real Analysis</option>';
+			echo	  '<option value="Database Systems">Database Systems</option>';
+			echo	  '<option value="Complex Analysis">Complex Analysis</option>';
+			echo	  '<option value="Unspecified">Unspecified</option>';
+			echo	  '<option value="Chemistry">Chemistry</option>';
+			echo	  '<option value="Computer Science">Computer Science</option>';
+			echo	  '<option value="Data Science">Data Science</option>';
+			echo	  '<option value="Mathematics">Mathematics</option>';
+			echo	  '<option value="Analysis">Analysis</option>';
+			echo	  '<option value="Theoretical Physics">Theoretical Physics</option>';
+			echo	  '<option value="Algebra">Algebra</option>';
+			echo	  '<option value="Physics">Physics</option>';
+			echo	'</select>';
+			echo	'<br>';
+			echo	'Article Content:<br>';
+			echo	'<textarea rows="5" cols="70" name="body">';
+			echo    $cnt;
+			echo	'</textarea>';
+			echo	'<br>';
+			echo	'<input type="submit" id="submit" value="'.$numid.'">';
+			echo	'<br>';
+	}
+	else{
+        echo '<META HTTP-EQUIV=refresh CONTENT="1;URL=updatearticle1.php">';
+        echo '<h1 id="notEqual-header">';
+        echo            'Invalid Editing Level!';
+        echo       '</h1>';
+        echo "$minLvel $theLevel";
+    }
 
 ?>
 	</div>
