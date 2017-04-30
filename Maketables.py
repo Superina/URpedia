@@ -51,14 +51,17 @@ def makepass():
     First_Name:varchar(20) NOT NULL,  Last_Name:varchar(20) NOT NULL, Salt:varchar(20) NOT NULL)"""
 
 text_file = open("wordlist.txt", "r")
-words = text_file.readlines()
+words = ["alpha", "beta", "gamma", "delta", "epsilon",
+         "omega", "tau", "zeta", "foxtrot", "pi", "redman",
+         "fyre", "festival", "tuna", "fish", "salmon", "very", "amazing"
+         "salad", "saveoursouls", "lol", "ethics", "harbringer"]
 #print(len(words))
 text_file.close()
 
 def makearticle():
     endpunclist = [".", "!", "?", "", "", "", "", "", ""]
     article = ""
-    randword = words[random.randint(0, len(words) - 1)][:-1]
+    randword = words[random.randint(0, len(words) - 2)][:-1]
     randword = randword[0].upper() + randword[1: len(randword)]
     article = randword  #first word
     randword = words[random.randint(0, len(words) - 1)][:-1]
