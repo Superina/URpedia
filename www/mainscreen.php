@@ -111,6 +111,9 @@
 
 	<div id="background_box1">
 		<div id="trending">
+		<h2>Trending</h2>
+
+		
 		<?php
 
 
