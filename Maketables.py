@@ -65,7 +65,7 @@ def makearticle():
     randword = randword[0].upper() + randword[1: len(randword)]
     article = randword  #first word
     randword = words[random.randint(0, len(words) - 1)]
-    while (len(article) + len(randword))< 999:        
+    while (len(article) + len(randword))< 50:        
         article +=  " " + randword + endpunclist[random.randint(0, len(endpunclist) - 1)]
         #checking end punctuation
         if article[-1] in ["?", ".", "!"]:

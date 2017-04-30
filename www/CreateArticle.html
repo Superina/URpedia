@@ -224,15 +224,18 @@
 	<div id="background_box2">
 		<h2>Create New Article</h2>
 		<br>
-		<form>
+		<form action="submit_article.php" method="post">
 			Title: <br>
 			<input type="text" name="title">
+			<br>
+			Username <br>
+			<input type="text" name="creator">
 			<br>
 			Editing Level:<br>
 			<input type="text" name="editing_level">
 			<br>
 			Category:<br>
-			<select>
+			<select name="category">
 			  <option value="Real Analysis">Real Analysis</option>
 			  <option value="Database Systems">Database Systems</option>
 			  <option value="Complex Analysis">Complex Analysis</option>
@@ -248,7 +251,7 @@
 			</select>
 			<br>
 			Article Content:<br>
-			<textarea rows="5" cols="70">
+			<textarea rows="5" cols="70" name="body">
 			</textarea>
 			<br>
 			<input type="submit" value="Submit Article">

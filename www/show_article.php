@@ -30,8 +30,8 @@
 
 
 
-$server = mysql_connect("localhost","jshang5","iEXDfQqe");
-$db =  mysql_select_db("jshang5",$server);
+$server = mysql_connect("localhost","cperkin5","=8QYd#2T");
+$db =  mysql_select_db("cperkin5",$server);
 $query = mysql_query("select * from Article");
 
 ?>
