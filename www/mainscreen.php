@@ -105,8 +105,13 @@
 				<input type="text" name="searchbut" id="searchbut">
   				<input type="submit" name="Search" value="Search">
   			</form>
+  			</div>
+  			<div id="search1">
   			<form id="CreateArticle" method="post" action="CreateArticle.php">
   				<input type="Submit" name="CreateArticle" value="Create Article">
+  			</form>
+  			<form id="login" method="post" action="Login.html" >
+  			<input type="submit" onclick="logOut()" name="Logout" value="Log Out">
   			</form>
 		</div>
 
@@ -114,7 +119,7 @@
 
 	<div id="background_box1">
 		<div id="trending">
-		<h2>Trending</h2>
+		<h2>Random Articles</h2>
 
 		
 		<?php
@@ -254,7 +259,30 @@
 	</div>	
 
 	<div id="background_box2">
-		<h2>Article Name</h2>
+		<?php
+		$randnum = mt_rand(1,1000);
+
+		$randnum1 = (string) $randnum;
+		$querycontent = "select title,content from Article where id='$randnum1'";
+		$server = mysql_connect("localhost","jfreeze","xBngNRS3");
+		$db =  mysql_select_db("jfreeze",$server);
+		$query2 = mysql_query($querycontent);
+
+?>
+
+<table class="striped">
+
+    <?php
+  while ($row = mysql_fetch_array($query2)){
+       		
+		   echo "<tr>";
+       	   echo "<td><h2>".$row['title']."</h2></td>"; 
+       	   echo "<tr>";
+           echo "<td>".$row['content']."</td>";          
+           echo "<tr>";
+  }
+    ?>
+</table>
 
 
 	</div>
@@ -262,9 +290,6 @@
 
 	  <!--Div for account-related buttons: window preset settings and logout button-->
 	  <div id="AccountFunctions">
-		<form id="login" method="post" action="Login.html" >
-  			<input type="submit" onclick="logOut()" name="Logout" value="Log Out">
-  		</form>
   		<form id="deleteacc" method="post" action="delete.php" >
   			<input type="submit" onclick="deleteaccount()" name="delete" value="Delete Account">
   		</form>

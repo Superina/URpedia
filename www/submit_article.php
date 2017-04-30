@@ -21,12 +21,12 @@
     </head>
     <body>
 
-
+<h1>Article Created Successfully</h1>
 
 <?php
 
-$server = mysql_connect("localhost","cperkin5","=8QYd#2T");
-$db =  mysql_select_db("cperkin5",$server);
+$server = mysql_connect("localhost","jfreeze","xBngNRS3");
+$db =  mysql_select_db("jfreeze",$server);
 
 $maxID = mysql_query("SELECT MAX(id) FROM Article");
 $rowID = mysql_fetch_row($maxID);
@@ -40,11 +40,11 @@ $body = $_POST['body'];
 $last_edited = date('Y-m-d');
 
 
-$server = mysql_connect("localhost","cperkin5","=8QYd#2T");
-$db =  mysql_select_db("cperkin5",$server);
+$server = mysql_connect("localhost","jfreeze","xBngNRS3");
+$db =  mysql_select_db("jfreeze",$server);
 $query = mysql_query("INSERT INTO Article (id,title,last_edited,editing_level,creator,belongs_to,content) 
     VALUES ('$id','$title','$last_edited','$editing_level','$creator','$category','$body')");
-mysql_query($query) or die("Error:".mysql_error());
+echo '<META HTTP-EQUIV=refresh CONTENT="1;URL=mainscreen.php">';
 //$numberChange = mysqli_affected_rows($query);
 
 /*if ($outcome===true) {

@@ -67,7 +67,7 @@ function confirmPass(){
       $cookie_name = "username";
       $cookie_value = $usr;
       setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-		  echo '<META HTTP-EQUIV=refresh CONTENT="0;URL=MainScreen.html">';
+		  echo '<META HTTP-EQUIV=refresh CONTENT="0;URL=mainscreen.php">';
 		  echo '<h1 id="Login-header">';
         echo            'Successful Login!';
         echo '</h1>';

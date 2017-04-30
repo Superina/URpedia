@@ -104,16 +104,21 @@
 				<input type="text" name="searchbut" id="searchbut">
   				<input type="submit" name="Search" value="Search">
   			</form>
-  			 <form id="CreateArticle" method="post" action="CreateArticle.php">
+  		</div>
+  		<div id="search1">
+  			<form id="CreateArticle" method="post" action="CreateArticle.php">
   				<input type="Submit" name="CreateArticle" value="Create Article">
   			</form>
-		</div>
+  			<form id="login" method="post" action="Login.html" >
+  			<input type="submit" onclick="logOut()" name="Logout" value="Log Out">
+  			</form>
 
-	</div>
+		</div>
+		</div>
 
 	<div id="background_box1">
 		<div id="trending">
-		<h2>Trending</h2>
+		<h2>Random Articles</h2>
 
 
 	<?php
@@ -255,6 +260,7 @@
 
 
 	<div id="background_box2">
+	<div class="contained">
 <table class="striped">	
 <?php
 
@@ -275,15 +281,13 @@ echo $row['content'];
 
 ?>
 </table>
+</div>
 
 	</div>
 
 
 	  <!--Div for account-related buttons: window preset settings and logout button-->
 	  <div id="AccountFunctions">
-		<form id="login" method="post" action="Login.html" >
-  			<input type="submit" onclick="logOut()" name="Logout" value="Log Out">
-  		</form>
   		<form id="deleteacc" method="post" action="delete.php" >
   			<input type="submit" onclick="deleteaccount()" name="delete" value="Delete Account">
   		</form>
