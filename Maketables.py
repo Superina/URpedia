@@ -198,7 +198,7 @@ def main():
         usernamelist.append("DELETED")
         f.write( "DELETED" + "," + "DELETED" + "," +
                                   "0000-00-00" + "," + "0" + "," +
-                                  "DELETED" + "," + "DELEDTED" + "," + "00:00:00" + "\n" )
+                                  "DELETED" + "," + "DELEDTED" + "," + "000000" + "\n" )
                 
           
     finally:
