@@ -53,7 +53,7 @@ def makepass():
 text_file = open("wordlist.txt", "r")
 words = ["alpha", "beta", "gamma", "delta", "epsilon",
          "omega", "tau", "zeta", "foxtrot", "pi", "redman",
-         "fyre", "festival", "tuna", "fish", "salmon", "very", "amazing"
+         "fyre", "festival", "tuna", "fish", "salmon", "very", "amazing",
          "salad", "saveoursouls", "lol", "ethics", "harbringer"]
 #print(len(words))
 text_file.close()
@@ -61,20 +61,20 @@ text_file.close()
 def makearticle():
     endpunclist = [".", "", "", "", "", "", "", "", ""]
     article = ""
-    randword = words[random.randint(0, len(words) - 2)][:-1]
+    randword = words[random.randint(0, len(words) - 2)]
     randword = randword[0].upper() + randword[1: len(randword)]
     article = randword  #first word
-    randword = words[random.randint(0, len(words) - 1)][:-1]
+    randword = words[random.randint(0, len(words) - 1)]
     while (len(article) + len(randword))< 999:        
         article +=  " " + randword + endpunclist[random.randint(0, len(endpunclist) - 1)]
         #checking end punctuation
         if article[-1] in ["?", ".", "!"]:
-            randword = words[random.randint(0, len(words) - 1)][:-1]
+            randword = words[random.randint(0, len(words) - 1)]
             if len(randword) < 1:
              continue
             randword = randword[0].upper() + randword[1:]
         else:
-            randword = words[random.randint(0, len(words) - 1)][:-1]
+            randword = words[random.randint(0, len(words) - 1)]
     return article
 
 for i in range(50):
