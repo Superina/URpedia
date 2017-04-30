@@ -249,7 +249,7 @@ $query = mysql_query($querycontent);
 </table>
 
 <?php
-$randnum = mt_rand(1,1000);
+
 
 $randnum1 = (string) $randnum;
 $querycontent = "select content from Article where id='$randnum1'";
