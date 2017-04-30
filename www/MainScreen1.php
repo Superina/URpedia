@@ -202,12 +202,28 @@
 			<span style="color: #003399">U</span><span style="color: yellow">R</span><span style="color: #003399">pedia</span>
 			</h1>
 			</div>
-		<div id="search">
-			<form id="search_button" method="post" >
-				<input type="text" name="search_box">
+			<div id="search">
+			<form id="search_button" method="post" action="search.php">
+				<input type="text" name="searchbut" id="searchbut">
   				<input type="submit" name="Search" value="Search">
   			</form>
-		</div>
+  			</div>
+  			<div id="ud">
+  			<form id="UpdateArticle" method="post" action="updatearticle1.php">
+  				<input type="Submit" name="UpdateArticle" value="Update Article">
+  			</form>
+  			<form id="CreateArticle" method="post" action="CreateArticle.php">
+  				<input type="Submit" name="CreateArticle" value="Create Article">
+  			</form>
+  			
+  			</div>
+  			<div id="search1">
+  			<form id="login" method="post" action="Login.html" >
+  			<input type="submit" onclick="logOut()" name="Logout" value="Log Out">
+  			</form>
+			</div>
+
+	</div>
 
 	</div>
 
