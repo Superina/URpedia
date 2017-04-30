@@ -232,6 +232,7 @@
 			<input type="number" name="numinput" id="numinput">			
 			<br>
 			<input type="submit" value="Submit ArticleID">
+
 			<br>
 	</div>
 
