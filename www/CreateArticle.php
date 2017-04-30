@@ -267,7 +267,7 @@
 			<input type="text" name="title">
 			<br>
 			Editing Level:<br>
-			<input type="text" name="editing_level">
+			<input type="number" name="editing_level">
 			<br>
 			Category:<br>
 			<select name="category">

@@ -21,8 +21,6 @@
     </head>
     <body>
 
-<h1>Article Created Successfully</h1>
-
 <?php
 
 $server = mysql_connect("localhost","jfreeze","xBngNRS3");
@@ -39,12 +37,13 @@ $category = $_POST['category'];
 $body = $_POST['body'];
 $last_edited = date('Y-m-d');
 
-
-$server = mysql_connect("localhost","jfreeze","xBngNRS3");
-$db =  mysql_select_db("jfreeze",$server);
-$query = mysql_query("INSERT INTO Article (id,title,last_edited,editing_level,creator,belongs_to,content) 
+if($editing_level>=1 && $editing_level<=4) {
+    $server = mysql_connect("localhost","jfreeze","xBngNRS3");
+    $db =  mysql_select_db("jfreeze",$server);
+    $query = mysql_query("INSERT INTO Article (id,title,last_edited,editing_level,creator,belongs_to,content) 
     VALUES ('$id','$title','$last_edited','$editing_level','$creator','$category','$body')");
-echo '<META HTTP-EQUIV=refresh CONTENT="1;URL=mainscreen.php">';
+    echo "<h1>Article Created Successfully</h1>";
+    echo '<META HTTP-EQUIV=refresh CONTENT="1;URL=mainscreen.php">';
 //$numberChange = mysqli_affected_rows($query);
 
 /*if ($outcome===true) {
@@ -55,6 +54,14 @@ else {
     echo 'There is an error'. $error ."<br />\n";
 
 }*/
+}
+else{
+        echo '<META HTTP-EQUIV=refresh CONTENT="1;URL=CreateArticle.php">';
+        echo '<h1 id="notEqual-header">';
+        echo            'Invalid Editing Level!';
+        echo       '</h1>';
+    }
+
 
 ?>
 </body>
