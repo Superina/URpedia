@@ -30,8 +30,8 @@
 
 
 
-$server = mysql_connect("localhost","jshang5","iEXDfQqe");
-$db =  mysql_select_db("jshang5",$server);
+$server = mysql_connect("localhost","jfreeze","xBngNRS3");
+$db =  mysql_select_db("jfreeze",$server);
 $query = mysql_query("select * from Article");
 
 ?>

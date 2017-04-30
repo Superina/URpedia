@@ -260,6 +260,7 @@ $db =  mysql_select_db("jfreeze",$server);
 	</div>	
 
 	<div id="background_box2">
+			<h2>Update Existing Article</h2>
 
 <?php
 
@@ -267,42 +268,45 @@ $db =  mysql_select_db("jfreeze",$server);
 
 	$server = mysql_connect("localhost","jfreeze","xBngNRS3");
 	$db =  mysql_select_db("jfreeze",$server);
-	$queryupdate = mysql_query("select * from Article where id=1");
+	$queryupdate = mysql_query("select * from Article where id=$numid");
 
 
 	$u1=mysql_fetch_array($queryupdate);
+	$fld = $u1['belongs_to'];
+	$cnt=$u1['content'];
     
 
-	?>
+		echo '<br>';
+		echo '<form action="update_article.php" method="post">';
+		echo	'Title: <br>';
+		echo	'<input type="text" name="title" value="'.$u1['title'].'">';
+		echo	'<br>';
+		echo	'Category:<br>';
+		echo	'<select name="category">';
+		echo      '<option value="'.$fld.'" selected="selected">'.$fld.'</option>';
+		echo	  '<option value="Real Analysis">Real Analysis</option>';
+		echo	  '<option value="Database Systems">Database Systems</option>';
+		echo	  '<option value="Complex Analysis">Complex Analysis</option>';
+		echo	  '<option value="Unspecified">Unspecified</option>';
+		echo	  '<option value="Chemistry">Chemistry</option>';
+		echo	  '<option value="Computer Science">Computer Science</option>';
+		echo	  '<option value="Data Science">Data Science</option>';
+		echo	  '<option value="Mathematics">Mathematics</option>';
+		echo	  '<option value="Analysis">Analysis</option>';
+		echo	  '<option value="Theoretical Physics">Theoretical Physics</option>';
+		echo	  '<option value="Algebra">Algebra</option>';
+		echo	  '<option value="Physics">Physics</option>';
+		echo	'</select>';
+		echo	'<br>';
+		echo	'Article Content:<br>';
+		echo	'<textarea rows="5" cols="70" name="body">';
+		echo    $cnt;
+		echo	'</textarea>';
+		echo	'<br>';
+		echo	'<input type="submit" id="submit" value="'.$numid.'">';
+		echo	'<br>';
 
-		<h2>Update Existing Article</h2>
-		<br>
-		<form action="update_article.php" method="post">
-			Title: <br>
-			<input type="text" name="title" value="$u1[title]">
-			<br>
-			Category:<br>
-			<select name="category">
-			  <option value="Real Analysis">Real Analysis</option>
-			  <option value="Database Systems">Database Systems</option>
-			  <option value="Complex Analysis">Complex Analysis</option>
-			  <option value="Unspecified">Unspecified</option>
-			  <option value="Chemistry">Chemistry</option>
-			  <option value="Computer Science">Computer Science</option>
-			  <option value="Data Science">Data Science</option>
-			  <option value="Mathematics">Mathematics</option>
-			  <option value="Analysis">Analysis</option>
-			  <option value="Theoretical Physics">Theoretical Physics</option>
-			  <option value="Algebra">Algebra</option>
-			  <option value="Physics">Physics</option>
-			</select>
-			<br>
-			Article Content:<br>
-			<textarea rows="5" cols="70" name="body">
-			</textarea>
-			<br>
-			<input type="submit" value="Submit Article">
-			<br>
+?>
 	</div>
 
 
