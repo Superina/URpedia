@@ -274,15 +274,16 @@ $db =  mysql_select_db("jfreeze",$server);
 	$u1=mysql_fetch_array($queryupdate);
 	$fld = $u1['belongs_to'];
 	$cnt=$u1['content'];
+	$tit=$u1['title'];
     
 
 		echo '<br>';
-		echo '<form action="update_article.php" method="post">';
+		echo '<form action="updateArticle2.php" method="post">';
 		echo	'Title: <br>';
-		echo	'<input type="text" name="title" value="'.$u1['title'].'">';
+		echo	'<input type="text" name="title" id="title" value="'.$u1['title'].'">';
 		echo	'<br>';
 		echo	'Category:<br>';
-		echo	'<select name="category">';
+		echo	'<select name="category" id="category">';
 		echo      '<option value="'.$fld.'" selected="selected">'.$fld.'</option>';
 		echo	  '<option value="Real Analysis">Real Analysis</option>';
 		echo	  '<option value="Database Systems">Database Systems</option>';
@@ -299,11 +300,11 @@ $db =  mysql_select_db("jfreeze",$server);
 		echo	'</select>';
 		echo	'<br>';
 		echo	'Article Content:<br>';
-		echo	'<textarea rows="5" cols="70" name="body">';
+		echo	'<textarea rows="5" cols="70" name="body" id="body">';
 		echo    $cnt;
 		echo	'</textarea>';
 		echo	'<br>';
-		echo	'<input type="submit" id="submit" value="'.$numid.'">';
+		echo	'<input type="submit" name = "submit" id="submit" value="'.$numid.'">';
 		echo	'<br>';
 
 ?>

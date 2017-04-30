@@ -33,17 +33,21 @@ $rowID = mysql_fetch_row($maxID);
 $id = $rowID[0]+1;
 
 $title = $_POST['title'];
-$creator = $_COOKIE["username"];
-$editing_level = (int)$_POST['editing_level'];
 $category = $_POST['category'];
 $body = $_POST['body'];
 $last_edited = date('Y-m-d');
+$idnum=$_POST['submit'];
+echo $idnum;
+echo $title;
+echo $category;
+echo $body;
+echo $last_edited;
+echo $idnum;
 
 
 $server = mysql_connect("localhost","jfreeze","xBngNRS3");
 $db =  mysql_select_db("jfreeze",$server);
-$query = mysql_query("Update Article (id,title,last_edited,editing_level,creator,belongs_to,content) 
-    VALUES ('$id','$title','$last_edited','$editing_level','$creator','$category','$body')");
+$query = mysql_query("Update Article set title='$title',last_edited='$last_edited',belongs_to = '$category',content='$body' where id='$idnum'");
 echo '<META HTTP-EQUIV=refresh CONTENT="1;URL=mainscreen.php">';
 //$numberChange = mysqli_affected_rows($query);
 

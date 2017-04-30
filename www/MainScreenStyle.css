@@ -107,12 +107,24 @@ overflow: scroll;
 	border-radius: 4%;
 	padding: 1px;
 }
+#ud
+{
+	position:absolute;
+	right: 10%;
+	top: 2%;
+	color: #fffff0;
+	border-style: solid;
+	border-width: 2px;
+	background-color: black;
+	border-radius: 4%;
+	padding: 1px;
+}
 
 #search1
 {
 	position:absolute;
 	right: 1%;
-	top: 17%;
+	top: 0%;
 	color: #fffff0;
 	border-style: solid;
 	border-width: 2px;
