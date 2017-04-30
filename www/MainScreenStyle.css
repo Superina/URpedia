@@ -34,7 +34,6 @@ body
 	padding: 3px;
 }
 
-
 h2[id="cookieuser"]
 {
 	margin: 10px;
@@ -45,6 +44,16 @@ h2[id="cookieuser"]
 
 /* B U T T O N S*/
 
+
+#deleteAccount
+{
+	font-family: "Times New Roman";
+	font-size: 1rem;
+	background-color: #1a1b9c;
+	width: 5rem;
+	height: 4rem;
+	color: white;
+}
 
 #banner
 {
@@ -87,13 +96,13 @@ height: 82%;
 {
 	position: fixed;
 	right: 1%;
-	top: 4%;
+	top: 1%;
 	color: #fffff0;
 	border-style: solid;
 	border-width: 2px;
 	background-color: black;
 	border-radius: 4%;
-	padding: 3px;
+	padding: 1px;
 }
 
 #categories
@@ -110,4 +119,18 @@ height: 82%;
 	left: 1%;
 }
 
+.contained {
+margin: 10px;
+padding : 5px;
+border: 5px dotted blue;
+width: 70%;
+}
 
+h3:hover {
+	color: green;
+}
+
+h3 {
+	color: blue;
+	text-decoration: underline;
+}

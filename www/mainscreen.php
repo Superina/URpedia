@@ -105,6 +105,9 @@
 				<input type="text" name="searchbut" id="searchbut">
   				<input type="submit" name="Search" value="Search">
   			</form>
+  			<form id="CreateArticle" method="post" action="CreateArticle.php">
+  				<input type="Submit" name="CreateArticle" value="Create Article">
+  			</form>
 		</div>
 
 	</div>
