@@ -17,7 +17,7 @@
 		  $('.striped tr:even').addClass('alt');
 		});
         </script>
-        <title>Sign-Up Results</title>
+        <title>Login Results</title>
     </head>
     <body>
 
@@ -28,55 +28,58 @@
 
 <?php
 function confirmPass(){
-	$usr = $_POST["usernamefield"];
-	$server = mysql_connect("localhost","jfreeze","xBngNRS3");
-	$db =  mysql_select_db("jfreeze",$server);
-	$query = mysql_query("Select username from User where username = '$usr'");
-	$usrcheck = mysql_fetch_array($query);
-	$usrchk = $usrcheck['username'];
 
-	if(strcmp($usr,$usrcheck)!=0){
-	 if(strcmp($_POST["passwordfield"],$_POST["confirmfield"])==0){
-		if($_POST["educationfield"]>=1 && $_POST["educationfield"]<=4){
-		$salt = date("Y.m.d.h:i:sa");
-		$date = date("Y.m.d");
 
-		//echo $salt;
-		$saltedpass = $salt.$_POST["passwordfield"];
-		//echo $saltedpass;
-		$sp = str_rot13(base64_encode($saltedpass));
-		//echo $sp;
-		$frst = $_POST["firstfield"];
-		$lst = $_POST["lastfield"];
+    //retrieve variables.
+    $usr = $_POST["usernamefield"];
+    $pas = $_POST["passwordfield"];
 
-		$server = mysql_connect("localhost","jfreeze","xBngNRS3");
-		$db =  mysql_select_db("jfreeze",$server);
-		$query = mysql_query("Insert into User Values('$usr','$sp','$date',0,'$frst','$lst','$salt')");
+    $server = mysql_connect("localhost","jfreeze","xBngNRS3");
+    $db =  mysql_select_db("jfreeze",$server);
+    $query = mysql_query("Select * from User where username = '$usr'");
+    $row = mysql_fetch_array($query);
+    $usrDB = $row['username'];
+    $pasDB = $row['password'];
+    $dateDB = $row['salt'];
+    $one = '=';
+    $two = "==";
+
+    $pad=strlen('$pasDB')%4;
+    //echo $pad;
+    if($pad==1){
+      $pasDB = $pasDB.$one;
+    }elseif($pad > 1){
+      $pasDB = $pasDB.$two;
+    }
+
+
+    //encode user given password+salt
+    $givenpas = $dateDB.$pas;
+    //echo $givenpas;
+    $spgiven = str_rot13(base64_encode($givenpas));
+    //echo $spgiven;
+
+
+    //compare DB pas and givenpas.
+    if(strcmp($spgiven,$pasDB)==0){
+
+		//set cookie, expiration after a month.
       $cookie_name = "username";
       $cookie_value = $usr;
       setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-		echo '<META HTTP-EQUIV=refresh CONTENT="1;URL=MainScreen.html">';
-		echo '<h1 id="Signup-header">';
-        echo            'Your account has been created!';
+		  echo '<META HTTP-EQUIV=refresh CONTENT="0;URL=MainScreen.html">';
+		  echo '<h1 id="Login-header">';
+        echo            'Successful Login!';
         echo '</h1>';
-    	}else {
-    		echo '<META HTTP-EQUIV=refresh CONTENT="1;URL=Signup.html">\n';
-		echo '<h1 id="Signup-header">';
-        echo            'Please select an education level between 1-4.';
-        echo '</h1>';
-    	}
+    	
 	}else{
-		echo '<META HTTP-EQUIV=refresh CONTENT="1;URL=Signup.html">';
+		echo '<META HTTP-EQUIV=refresh CONTENT="3;URL=Login.html">';
 		echo '<h1 id="notEqual-header">';
-        echo            'Your passwords do not match!';
+        echo            'Please verify the account exists and that the password you entered is correct.';
         echo       '</h1>';
+        //echo $spgiven;
+        //echo $pasDB;
 	}
- }else{
-	echo '<META HTTP-EQUIV=refresh CONTENT="1;URL=Signup.html">';
-		echo '<h1 id="notEqual-header">';
-        echo            'This user already exists.';
-        echo       '</h1>';
- }
 }
 
 confirmPass();

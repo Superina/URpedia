@@ -30,7 +30,7 @@
 			var checkCookie = function() {
 					var user=getCookie("username");
 					if (user != "") {
-							window.location = "/MainScreen.html\r\n";
+							window.location = "MainScreen.html\r\n";
 					}
 			}
 		</script>
@@ -63,10 +63,12 @@
 		<h2>SIGN UP</h2>
 		<!--Signup form with text field (username), password field (password), and submit button-->
 		<form id="login" method = "post" action="signup.php">
-			Username: <br><input type="text" required = "required" name="usernamefield"><br><br>
-			Password: <br><input type="password" required = "required" name="passwordfield"><br><br>
-			Confirm Password: <br><input type="password" required = "required" name="confirmfield"><br><br>
-			Level of Education: <br><input type="text" required = "required" name="educationfield"><br><br>
+			First Name: <br><input type="text" required = "required" name="firstfield" id="usernamefield"><br><br>
+			Last Name: <br><input type="text" required = "required" name="lastfield" id="usernamefield"><br><br>
+			Username: <br><input type="text" required = "required" name="usernamefield" id="usernamefield"><br><br>
+			Password: <br><input type="password" required = "required" name="passwordfield" id="usernamefield"><br><br>
+			Confirm Password: <br><input type="password" required = "required" name="confirmfield" id="usernamefield"><br><br>
+			Level of Education: <br><input type="number" required = "required" name="educationfield" id="usernamefield"><br><br>
 
 			<input type="submit" name="submit">
 			<p class="result"></p>

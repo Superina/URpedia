@@ -32,7 +32,7 @@
 		var checkCookie = function() {
 		    var user=getCookie("username");
 		    if (user != "") {
-						window.location = "/MainScreen.html\r\n";
+						window.location = "MainScreen.html\r\n";
 		    }
 		}
 		</script>
@@ -42,7 +42,7 @@
         <!-- include JS -->
        <script language="javascript" type="text/javascript">
             $(document).ready(function() {
-                console.log("Lecture 08 script loaded...");
+                console.log("Checking...");
 
            // when the button with the id 'fetch_pizza' is clocked...
                 $('#submit').click(get_status);
@@ -59,41 +59,9 @@
            		console.log("name: " + $name);
            // $("#message").load("test.txt");
            		console.log('HIII');
+           	}
 
 
-           // .ajax is the core Ajax function supported by jQuery and requires the following parameters:
-           //  url: the URL of the resource to send the request to
-           //  data: the data to send along with the request; encoded as a query string for GET
-           //  dataType: the expected format of the data coming back in the response
-           //  success: a function to execute if the request is successful
-           //  error: a function to execute if the request fails for any reason
-           		$.ajax({
-               		url: '../cgi-bin/login_check.py',  // lecture 8 script to query the pizza database
-
-               		data: {                       // the data to send
-                   		usernamefield: $name
-               		},
-
-               		type: "POST",                  // GET or POST
-
-               		dataType: "text",             // json format
-
-               		success: function(data) {   // function to execute upon a successful request
-                   		console.log("success!");
-
-                   		$('#usernamefield').html('Name: ' + data.usernamefield);
-
-               		},
-
-               		error: function(request) {   // function to call when the request fails
-                   		console.log("error!");
-                   		//console.log(data);
-                   		console.log(request);
-                   		$('#error').html("<p>Hello " + $name +
-                       		", please enter a username and password.</p>");
-               		}
-           		});
-       		};
 
         </script>
 
@@ -124,7 +92,7 @@
 	<div id="form">
 		<h2>LOGIN</h2>
 		<!--Login form with text field (username), password field (password), and submit button-->
-		<form id="login" method="post" action="MainScreen.html">
+		<form id="login" method="post" action="login.php">
 			Username: <input type="text" required="required" name="usernamefield" id="usernamefield"><br><br>
 
 			Password: <input type="password" required="required" name="passwordfield" id="passwordfield"><br><br>

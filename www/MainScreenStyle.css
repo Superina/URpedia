@@ -34,6 +34,7 @@ body
 	padding: 3px;
 }
 
+
 h2[id="cookieuser"]
 {
 	margin: 10px;
@@ -44,16 +45,6 @@ h2[id="cookieuser"]
 
 /* B U T T O N S*/
 
-
-#deleteAccount
-{
-	font-family: "Times New Roman";
-	font-size: 1rem;
-	background-color: #1a1b9c;
-	width: 5rem;
-	height: 4rem;
-	color: white;
-}
 
 #banner
 {
@@ -102,7 +93,7 @@ height: 82%;
 	border-width: 2px;
 	background-color: black;
 	border-radius: 4%;
-	padding: 1px;
+	padding: 3px;
 }
 
 #categories
@@ -118,3 +109,5 @@ height: 82%;
 	top: 0%;
 	left: 1%;
 }
+
+
