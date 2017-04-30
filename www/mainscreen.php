@@ -45,20 +45,31 @@
 			    if (user != "") {
 			        document.getElementById("cookieuser").innerHTML = (user);
 			    } else {
-						window.location = "Login.html\r\n";
+						//window.location = "/Login.html\r\n";
 			    }
 			}
 
 			//logoutfunction
 			function logOut(){
 				document.cookie="username=deleted; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+				document.cookie ="chk=deleted; expires=Thu, 01 Jan 1920 00:00:00 GMT";
+				document.cookie ="wthr=deleted; expires=Thu, 01 Jan 1920 00:00:00 GMT";
+				document.cookie ="ssn=deleted; expires=Thu, 01 Jan 1920 00:00:00 GMT";
+				document.cookie ="presNum=deleted; expires=Thu, 01 Jan 1920 00:00:00 GMT";
 			}
 
 
+	 	function loadSong(AudioFileName){
+		  var player=document.getElementById('player');
+			var sourceaudio=document.getElementById('player');
+		  sourceaudio.src=AudioFileName;
+		  player.load(); //just start buffering (preload)
+		  player.play(); //start playing
+		}
 
 		function deleteaccount(){
 			$.ajax({
-               	url: 'delete.php',  // lecture 8 script to query the pizza database
+               	url: '../cgi-bin/deleteaccount.py',  // lecture 8 script to query the pizza database
 
                	data: {                       // the data to send
 
@@ -82,13 +93,82 @@
 
                	}
            	});
-           	document.cookie="username=deleted; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
 		}
 
+		function presets(option){
+			if(document.getElementById('saveorload').checked){
+				console.log("checked");
+				document.cookie ="chk=checked; expires=Thu, 01 Jan 2020 00:00:00 GMT";
+				document.cookie ="wthr="+WeatherCook+"; expires=Thu, 01 Jan 2020 00:00:00 GMT";
+				document.cookie ="ssn="+SeasonCook+"; expires=Thu, 01 Jan 2020 00:00:00 GMT";
+				document.cookie ="presNum="+option+"; expires=Thu, 01 Jan 2020 00:00:00 GMT";
+			}else{
+				console.log("unchecked");
+				document.cookie ="chk=unchecked; expires=Thu, 01 Jan 2020 00:00:00 GMT";
+				document.cookie ="presNum="+option+"; expires=Thu, 01 Jan 2020 00:00:00 GMT";
+				document.cookie ="wthr="+WeatherCook+"; expires=Thu, 01 Jan 2020 00:00:00 GMT";
+				document.cookie ="ssn="+SeasonCook+"; expires=Thu, 01 Jan 2020 00:00:00 GMT";
+			}
 
+			$.ajax({
+               	url: '../cgi-bin/PresetsSave.py',  // lecture 8 script to query the pizza database
+
+               	data: {                       // the data to send
+
+                   	usr: user
+               	},
+
+               	type: "POST",                  // GET or POST
+
+               	dataType: "text",             // html format
+
+               	success: function(response) {   // function to execute upon a successful request
+               		console.log("success for database!");
+               		if(!(document.getElementById('saveorload').checked)){
+                   		console.log("Fetching Cookies");
+                   		ssncook = getCookie("ssn");
+						ssncook = ssncook.split("\"")[1];
+                   		console.log(ssncook);
+                   		wthrcook = getCookie("wthr");
+						wthrcook = wthrcook.split("\"")[1];
+                   		console.log(wthrcook);
+	  					document.body.style.backgroundImage = ssncook;
+	  					document.getElementById("OverlayImage").style.backgroundImage =wthrcook;
+                   	}
+               	},
+
+               	error: function(request) {   // function to call when the request fails
+                   	console.log("error for database!");
+                   	console.log(request);
+
+               	}
+           	});
+		}
+		function changeSeason(SeasonKey) {
+	  		var SeasonImage=0;
+			SeasonImage = "url(" + SeasonKey + ")";
+			SeasonCook='url(\'' + SeasonKey + '\')';
+			console.log(SeasonImage);
+			console.log(SeasonCook);
+	  		document.body.style.backgroundImage = SeasonImage;
+
+	  	}
+
+	  	function changeWeather(WeatherKey) {
+			var WeatherImage=0;
+			WeatherImage = 'url(\'' + WeatherKey + '\')';
+			WeatherCook = 'url(\'' + WeatherKey + '\')';
+	  		console.log(WeatherImage);
+			document.getElementById("OverlayImage").style.backgroundImage = String(WeatherImage);
+	  	}
+
+			
 
 
     </script>
+
+
+
 
 	</head>
 	<!--Body section, set to run the checkCookie() function when the page loads-->
@@ -101,8 +181,8 @@
 			</h1>
 			</div>
 		<div id="search">
-			<form id="search_button" method="post" action="search.php">
-				<input type="text" name="searchbut" id="searchbut">
+			<form id="search_button" method="post" >
+				<input type="text" name="search_box">
   				<input type="submit" name="Search" value="Search">
   			</form>
 		</div>
@@ -113,8 +193,8 @@
 		<div id="trending">
 		<h2>Trending</h2>
 
-		
-		<?php
+
+	<?php
 
 
 	$num1=rand(1,1500);
@@ -248,35 +328,14 @@
 
 		
 		</div>
-	</div>	
+
+	
+
+
 
 	<div id="background_box2">
-		<h2>Article Name</h2>
+		<h2>Article</h2>
 		<br>
-		<form id="article" method="post" action="show_article.php" >
-  			<input type="submit" name="Article" value="Show Articles">
-  		</form>
-  		<br>
-		<form id="field" method="post" action="show_field.php" >
-  			<input type="submit" name="Field" value="Show Field">
-  		</form>
-  		<br>
-		<form id="experience" method="post" action="show_has_experience.php" >
-  			<input type="submit" name="Experience" value="Show Experience">
-  		</form>
-  		<br>
-		<form id="user" method="post" action="show_user.php" >
-  			<input type="submit" name="User" value="Show Users">
-  		</form>
-  		<br>
-  		<form id="admin" method="post" action="show_admin.php" >
-  			<input type="submit" name="Admin" value="Show Admins">
-  		</form>
-  		<br>
-  		<form id="CreateArticle" method="post" action="CreateArticle.php">
-			<input type="submit" name="CreateArticle" id="CreateArticle" value="Create Article">
-  		</form>
-
 	</div>
 
 
@@ -285,9 +344,7 @@
 		<form id="login" method="post" action="Login.html" >
   			<input type="submit" onclick="logOut()" name="Logout" value="Log Out">
   		</form>
-  		<form id="deleteacc" method="post" action="delete.php" >
-  			<input type="submit" onclick="deleteaccount()" name="delete" value="Delete Account">
-  		</form>
 	  </div>
 	</body>
 </html>
+
