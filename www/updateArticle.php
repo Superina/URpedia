@@ -264,7 +264,7 @@ $db =  mysql_select_db("jfreeze",$server);
 
 <?php
 
-	$numid = $_POST('numinput');
+	$numid = $_POST['numinput'];
 
 	$server = mysql_connect("localhost","jfreeze","xBngNRS3");
 	$db =  mysql_select_db("jfreeze",$server);
