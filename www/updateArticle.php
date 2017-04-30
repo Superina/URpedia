@@ -317,6 +317,12 @@ $db =  mysql_select_db("jfreeze",$server);
 			echo	'<br>';
 			echo	'<input type="submit" id="submit" value="'.$numid.'">';
 			echo	'<br>';
+			echo "</form>";
+
+			$userEdit = mysql_query("select num_art_edited from User where username='$userperson'");
+			$rowID1 = mysql_fetch_row($userEdit);
+			$numEdited = $rowID1[0] + 1;
+			$query3 = mysql_query("Update User set num_art_edited='$numEdited' where username='$userperson'");
 	}
 	else{
         echo '<META HTTP-EQUIV=refresh CONTENT="1;URL=updatearticle1.php">';
