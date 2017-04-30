@@ -242,14 +242,14 @@ $query = mysql_query($querycontent);
   while ($row = mysql_fetch_array($query)){
        		
        	   echo "<tr>";
-           echo "<td>".$row['title']."</td>";          
+           echo "<td><h3>".$row['title']."</h3></td>";          
            echo "<tr>";
   }
     ?>
 </table>
 
 <?php
-
+$randnum = mt_rand(1,1000);
 
 $randnum1 = (string) $randnum;
 $querycontent = "select content from Article where id='$randnum1'";
