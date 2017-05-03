@@ -51,4 +51,8 @@ newtable1.count()\
 2.9\
 \
 itemDFLB = itemDF.filter(itemDF.size_unit_desc == 'LB')\
-itemDFLB.sort('item_unt_qty',ascending=False).show(1)}
+itemRDD = itemDFLB.select("item_unt_qty").rdd\
+maxweight = itemRDD.max()[0]\
+itemDFLBmax = itemDFLB.filter(itemDFLB.item_unt_qty == maxweight)\
+itemDFLBmax.sort('item_unt_qty',ascending=False).show()\
+\
