@@ -7,32 +7,36 @@
 
 \f0\fs24 \cf0 1.\
 \
-eyre=sc.textFile('/public/tbiswas2/csc261/spark/bronte-jane-eyre.txt')\
-words=eyre.flatMap(lambda x: x.split())\
-letters=words.flatMap(lambda x: list(x))\
-letters1 = letters.map(lambda x: (x.lower(),1))\
-letterCountX=letters1.reduceByKey(lambda v1, v2: v1+v2)\
-letterCountX.take(10)\
-letterCountL = letterCountX.collect()\
-\
-\
-%matplotlib inline\
-import numpy as np\
-import matplotlib.pyplot as plt\
-\
-letterCountList = letterCountL\
-zippedletterCount = zip(*letterCountList)\
- \
-letters = zippedletterCount[0]\
-y_pos = np.arange(len(letters))\
-letterCount = zippedletterCount[1]\
- \
-plt.bar(y_pos, letterCount, align='center', alpha=0.5)\
-plt.xticks(y_pos, letters)\
-plt.ylabel('Count')\
-plt.title('Letter Frequency')\
- \
-plt.show()\
+alphabet = {u'a',u'b',u'c',u'd',u'e',u'f',u'g',u'h',u'i',u'j',u'k',u'l',u'm',u'n',u'o',u'p',
+           u'q',u'r',u's',u't',u'u',u'v',u'w',u'x',u'y',u'z'}
+
+eyre=sc.textFile('/public/tbiswas2/csc261/spark/bronte-jane-eyre.txt')
+words=eyre.flatMap(lambda x: x.split())
+letters=words.flatMap(lambda x: list(x))
+letters1 = letters.map(lambda x: (x.lower(),1))
+letterCountX=letters1.reduceByKey(lambda v1, v2: v1+v2).filter(lambda x : x[0] in alphabet)
+letterCountX=letterCountX.sortByKey()
+
+letterCountL = letterCountX.collect()
+
+
+%matplotlib inline
+import numpy as np
+import matplotlib.pyplot as plt
+
+letterCountList = letterCountL
+zippedletterCount = zip(*letterCountList)
+ 
+letters = zippedletterCount[0]
+y_pos = np.arange(len(letters))
+letterCount = zippedletterCount[1]
+ 
+plt.bar(y_pos, letterCount, align='center', alpha=0.5)
+plt.xticks(y_pos, letters)
+plt.ylabel('Count')
+plt.title('Letter Frequency')
+ 
+plt.show()
 \
 \
 \
