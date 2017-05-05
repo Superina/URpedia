@@ -44,7 +44,7 @@ function confirmPass(){
 		//echo $salt;
 		$saltedpass = $salt.$_POST["passwordfield"];
 		//echo $saltedpass;
-		$sp = str_rot13(base64_encode($saltedpass));
+		$sp = gzdeflate($saltedpass);
 		//echo $sp;
 		$frst = $_POST["firstfield"];
 		$lst = $_POST["lastfield"];

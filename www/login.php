@@ -44,30 +44,33 @@ function confirmPass(){
     $one = '=';
     $two = "==";
 
-    $pad=strlen('$pasDB')%4;
+    //$pad=strlen('$pasDB')%4;
     //echo $pad;
-    if($pad==1){
-      $pasDB = $pasDB.$one;
-    }elseif($pad > 1){
-      $pasDB = $pasDB.$two;
-    }
+    //if($pad==1){
+    //  $pasDB = $pasDB.$one;
+    //}elseif($pad > 1){
+    //  $pasDB = $pasDB.$two;
+    //}
 
 
     //encode user given password+salt
     $givenpas = $dateDB.$pas;
     //echo $givenpas;
-    $spgiven = str_rot13(base64_encode($givenpas));
+    $spgiven = gzdeflate($givenpas);
     //echo $spgiven;
 
 
     //compare DB pas and givenpas.
+    //echo $spgiven;
+    //echo "   ";
+    //echo $pasDB;
     if(strcmp($spgiven,$pasDB)==0){
 
 		//set cookie, expiration after a month.
       $cookie_name = "username";
       $cookie_value = $usr;
       setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-		  echo '<META HTTP-EQUIV=refresh CONTENT="0;URL=mainscreen.php">';
+		  echo '<META HTTP-EQUIV=refresh CONTENT="1;URL=mainscreen.php">';
 		  echo '<h1 id="Login-header">';
         echo            'Successful Login!';
         echo '</h1>';
